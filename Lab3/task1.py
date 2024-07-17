@@ -27,8 +27,8 @@ plt.grid(color='silver', linewidth=1.5)
 # Show plot
 plt.imshow(gotg, cmap='gray', extent=[0, 8, 0, 8])
 plt.title("Game of The Generals")
-plt.show()'''
-
+plt.show()
+'''
 # Scrabble Board
 scrabble = np.zeros((15, 15))
 
@@ -58,20 +58,21 @@ for (i, j) in double_letter_scores:
 for i in range(15):
     for j in range(15):
         if scrabble[i, j] == 1:
-            plt.text(j, i, "TW", va='center', ha='center', c='whitesmoke', fontsize='small', fontweight='bold')
+            plt.text(j + 0.5, i + 0.5, "TW", va='center', ha='center', c='whitesmoke', fontsize='small', fontweight='bold')
         elif scrabble[i, j] == 3.2:
-            plt.text(j, i, "DW", va='center', ha='center', fontsize='small', fontweight='bold')
+            plt.text(j + 0.5, i + 0.5, "DW", va='center', ha='center', fontsize='small', fontweight='bold')
         elif scrabble[i, j] == 1.8:
-            plt.text(j, i, "TL", va='center', ha='center', fontsize='small', fontweight='bold')
+            plt.text(j + 0.5, i + 0.5, "TL", va='center', ha='center', fontsize='small', fontweight='bold')
         elif scrabble[i, j] == 4:
-            plt.text(j, i, "DL", va='center', ha='center', fontsize='small', fontweight='bold')
+            plt.text(j + 0.5, i + 0.5, "DL", va='center', ha='center', fontsize='small', fontweight='bold')
         elif scrabble[i ,j] == 0:
             scrabble[i ,j] = 2.5
 
 # Make x-axis ticks letters and show plot
 xticksLabel = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"]
-plt.imshow(scrabble, cmap='nipy_spectral', interpolation='nearest')
+plt.imshow(scrabble, cmap='nipy_spectral', extent=[0, 15, 0, 15])
 plt.xticks(range(0,15), xticksLabel)
 plt.yticks(range(0,15))
 plt.title("Scrabble")
+plt.grid(color='silver', linewidth=1.5)
 plt.show()
